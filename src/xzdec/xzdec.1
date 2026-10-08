@@ -114,30 +114,24 @@ has, thus the exit status 2 is not used by
 .BR xzdec .
 .SH NOTES
 Use
-.BR xz (1)
+Use
+.BR gzip (1)
 instead of
-.B xzdec
-or
-.B lzmadec
+.B gunzip
 for normal everyday use.
-.B xzdec
-or
-.B lzmadec
-are meant only for situations where it is important to have
-a smaller decompressor than the full-featured
-.BR xz (1).
+.B gunzip
+is intended primarily for
+decompressing
+.B .gz
+files when only decompression is required.
 .PP
-.B xzdec
-and
-.B lzmadec
-are not really that small.
-The size can be reduced further by dropping
-features from liblzma at compile time,
-but that shouldn't usually be done for executables distributed
-in typical non-embedded operating system distributions.
-If you need a truly small
-.B .xz
-decompressor, consider using XZ Embedded.
+.B gunzip
+provides a simpler interface than the full-featured
+.BR gzip (1),
+but it does not support all of the compression and
+configuration features provided by
+.BR gzip (1).
+.PP
 .SH "SEE ALSO"
 .BR xz (1)
 .PP
